@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+    <a href="#" class="brand-link">
+      <img src="/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">RecruitX</span>
     </a>
@@ -26,7 +26,7 @@
                with font-awesome or any other icon font library -->
            
           <li class="nav-item">
-            <a href="{{ (request()->is('dashboard')) ? '#' : '/dashboard' }}" class="nav-link {{ (request()->is('dashboard')) ? 'active' : '' }}">
+            <a href="{{ route('dashboard') }}" class="nav-link {{ (request()->is('dashboard')) ? 'active' : '' }}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>Dashboard</p>
             </a>
@@ -110,11 +110,11 @@
                
             </ul>
           </li>
-
+  
           {{-- User Navigation --}}
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-users-cog text-danger"></i>
+          <li class="nav-item has-treeview {{ (Str::startsWith(Route::currentRouteName(),'users')) ? 'menu-open' : '' }} ">
+            <a href="#" class="nav-link {{ (Str::startsWith(Route::currentRouteName(),'users')) ? 'active' : '' }}">
+              <i class="nav-icon fas fa-users-cog"></i>
               <p>
                 Users
                 <i class="right fas fa-angle-left"></i>
@@ -122,50 +122,36 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/charts/chartjs.html" class="nav-link">
+                <a href="{{ route('users/list') }}" class="nav-link {{ request()->is('users/list') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon text-info"></i>
                   <p>List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/register" target="_blank" class="nav-link">
+                <a href="{{ route('register') }}" class="nav-link">
                   <i class="far fa-circle nav-icon text-info"></i>
                   <p>Register</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/charts/inline.html" class="nav-link">
+                <a href="{{ route('users/roles') }}" class="nav-link {{ (request()->is('users/roles') ? "active" : ((request()->is('users/roles/create') ? "active" : ''))) }}">
                   <i class="far fa-circle nav-icon text-info"></i>
                   <p>Roles</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="pages/charts/inline.html" class="nav-link">
-                  <i class="far fa-circle nav-icon text-info"></i>
-                  <p>Permissions</p>
-                </a>
-              </li>
+               
             </ul>
           </li>
            
-           
-          <li class="nav-header">LABELS</li>
+            
+    
+
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon far fa-circle text-danger"></i>
-              <p class="text">Important</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon far fa-circle text-warning"></i>
-              <p>Warning</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon far fa-circle text-info"></i>
-              <p>Informational</p>
+              <i class="nav-icon far fa-question-circle"></i>
+              <p>
+                Help
+              </p>
             </a>
           </li>
         </ul>

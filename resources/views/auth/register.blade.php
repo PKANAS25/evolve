@@ -65,7 +65,7 @@
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">
-              &nbsp;
+             <a href="{{ URL::previous() }}"><i class="fas fa-arrow-circle-left"></i> Back </a>
             </div>
           </div>
           <!-- /.col -->
