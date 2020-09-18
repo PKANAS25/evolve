@@ -15,11 +15,11 @@ class UserController extends Controller
     
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth','permission:user-manage']);
     }
 
     public function index()
-    {
+    {    
     	$users = User::with('roles')->get();
         return view('user.index',compact('users'));
     }

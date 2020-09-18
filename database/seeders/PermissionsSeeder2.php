@@ -4,7 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use DB;
-class PermissionsSeeder extends Seeder
+
+class PermissionsSeeder2 extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,16 +15,7 @@ class PermissionsSeeder extends Seeder
     public function run()
     {
         $permissions = [
-						'client-view',
-						'client-create',
-						'client-edit',
-						'client-delete',
-						'employee-view',
-						'employee-create',
-						'employee-edit',
-						'employee-delete',
-						'user-manage',
-						'role-manage',
+						'permissionname',
 						];
 		foreach ($permissions as $permission) {
 

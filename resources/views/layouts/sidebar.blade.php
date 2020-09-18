@@ -110,7 +110,7 @@
                
             </ul>
           </li>
-  
+          @canany(['user-manage','role-manage'])
           {{-- User Navigation --}}
           <li class="nav-item has-treeview {{ (Str::startsWith(Route::currentRouteName(),'users')) ? 'menu-open' : '' }} ">
             <a href="#" class="nav-link {{ (Str::startsWith(Route::currentRouteName(),'users')) ? 'active' : '' }}">
@@ -121,10 +121,11 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+              @can('user-manage')
               <li class="nav-item">
                 <a href="{{ route('users/list') }}" class="nav-link {{ request()->is('users/list') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon text-info"></i>
-                  <p>List</p>
+                  <p>Admins</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -133,16 +134,18 @@
                   <p>Register</p>
                 </a>
               </li>
+              @endcan
+              @can('role-manage')
               <li class="nav-item">
                 <a href="{{ route('users/roles') }}" class="nav-link {{ (request()->is('users/roles') ? "active" : ((request()->is('users/roles/create') ? "active" : ''))) }}">
                   <i class="far fa-circle nav-icon text-info"></i>
                   <p>Roles</p>
                 </a>
               </li>
-               
+              @endcan  
             </ul>
           </li>
-           
+          @endcan 
             
     
 

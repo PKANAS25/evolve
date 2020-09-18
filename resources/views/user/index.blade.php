@@ -68,7 +68,7 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Roles</th>
-                    <th style="width: 15%"> </th>
+                    <th style="width: 12%"> </th>
                   </tr>
                   </thead>
                   <tbody>
@@ -85,7 +85,7 @@
                       </ul></td>
                     <td><a title="Edit" href="{{ route('users/edit',['user' => Crypt::encrypt($user->id)]) }}"><i class="fas fa-edit"></i></a>
 
-                      <a style="padding-left:5em" class="text-danger" data-toggle="confirmation{{ $user->id }}" data-title="Are you sure?">
+                      <a style="padding-left:3em" class="text-danger" data-toggle="confirmation{{ $user->id }}" data-title="Are you sure?">
                         <i class="fas fa-trash-alt"></i>
                       </a>
 
