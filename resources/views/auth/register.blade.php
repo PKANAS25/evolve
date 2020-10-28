@@ -21,7 +21,7 @@
 <body class="hold-transition register-page">
 <div class="register-box">
   <div class="register-logo">
-    <a  ><b>Recruit</b>X</a>
+    <a  >Evolv<b>e</b></a>
   </div>
 
   <div class="card">

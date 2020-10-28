@@ -24,6 +24,11 @@ Auth::routes();
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 
+Route::prefix('branches')->group(function () {
+    Route::get('create', [App\Http\Controllers\BranchController::class, 'create'])->name('branches/create'); 
+    Route::get('store', [App\Http\Controllers\BranchController::class, 'store'])->name('branches/store'); 
+});
+
 
 Route::prefix('users')->group(function () {
     Route::get('list', [App\Http\Controllers\UserController::class, 'index'])->name('users/list');
@@ -46,3 +51,4 @@ Route::prefix('users')->group(function () {
 
     Route::post('roles/delete', [App\Http\Controllers\RolesController::class, 'delete'])->name('users/roles/delete');
 });
+

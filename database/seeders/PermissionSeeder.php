@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use DB;
-class PermissionsSeeder extends Seeder
+
+class PermissionSeeder extends Seeder
 {
     /**
      * Run the database seeds.

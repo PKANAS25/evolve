@@ -3,7 +3,7 @@
     <a href="#" class="brand-link">
       <img src="/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">RecruitX</span>
+      <span class="brand-text font-weight-light">Evolve</span>
     </a>
 
     <!-- Sidebar -->
@@ -34,25 +34,25 @@
 
 
           {{-- Clients Navigation --}}
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+          <li class="nav-item has-treeview {{ (Str::startsWith(Route::currentRouteName(),'branches')) ? 'menu-open' : '' }}">
+            <a href="#" class="nav-link {{ (Str::startsWith(Route::currentRouteName(),'branches')) ? 'active' : '' }}">
               <i class="nav-icon fas fa-building"></i>
               <p>
-                Clients
+                Branches
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/charts/chartjs.html" class="nav-link">
+                <a href="{{ route('branches/create') }}" class="nav-link {{ request()->is('branches/create') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon text-info"></i>
-                  <p>Add Client/Company</p>
+                  <p>Add Branch</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/charts/flot.html" class="nav-link">
                   <i class="far fa-circle nav-icon text-info"></i>
-                  <p>Companies List</p>
+                  <p>Branch List</p>
                 </a>
               </li>
                
